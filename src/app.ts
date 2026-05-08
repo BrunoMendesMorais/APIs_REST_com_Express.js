@@ -5,4 +5,4 @@ const PORT = process.env.PORT ?? 3000
 
 app.use(express.json())
 
-a
+app.listen(PORT, ()=> console.log(`API em execução no URL: http://localhost:${PORT}`))
