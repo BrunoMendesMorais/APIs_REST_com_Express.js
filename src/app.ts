@@ -10,9 +10,11 @@ const produtos: Produto[] =[];
 
 function listarProdutos(req: Request, res: Response):void{
     try{
-        
+        if(produtos.length == 0){
+            throw new Error("Nenhum produto encontrado");
+        }
         res.status(200).json(produtos);
-
+        
     }catch(e: unknown){
         res.status(400).json({Message: "Nenhum produto encontrado"});
     }
@@ -21,9 +23,7 @@ function listarProdutos(req: Request, res: Response):void{
 function filtraProdutoPorID(req: Request, res: Response):void{
     try{
         let id:any = req.params.id;
-        
         res.status(200).json(produtos.find(p => p.id == id));
-
     }catch(e: unknown){
         res.status(400).json({Message: "Necessário informar um ID válido"});
     }
@@ -70,7 +70,11 @@ function editarProduto(req: Request, res: Response): void {
         const index = produtos.findIndex(p => p.id == id);
 
         if (index == -1) {
-            throw new Error("id já cadastrado")
+            throw new Error("id não encontrado")
+        }
+
+        if(!data.nome || !data.preco || !data.fabricante){
+            throw new Error("Favor enviar os valores corretos");
         }
 
         const produtoAtualizado = {

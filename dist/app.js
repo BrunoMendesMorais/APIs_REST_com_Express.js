@@ -11,6 +11,9 @@ app.use(express_1.default.json());
 const produtos = [];
 function listarProdutos(req, res) {
     try {
+        if (produtos.length == 0) {
+            throw new Error("Nenhum produto encontrado");
+        }
         res.status(200).json(produtos);
     }
     catch (e) {
@@ -63,7 +66,7 @@ function editarProduto(req, res) {
         const data = req.body;
         const index = produtos.findIndex(p => p.id == id);
         if (index == -1) {
-            throw new Error("id já cadastrado");
+            throw new Error("id não encontrado");
         }
         const produtoAtualizado = {
             id,
