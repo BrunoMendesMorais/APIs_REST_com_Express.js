@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "5049ef3e-be67-46c5-bcf5-a5573e3df449",
+		"name": "Gestão de produtos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42986995"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/listarProdutos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"listarProdutos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/produto/65",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"produto",
+						"65"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"id\": 2,\r\n\"nome\": \" Caneta \" ,\r\n\"preco\": 5.50 ,\r\n\"fabricante\": {\r\n\"nome\": \"BIC\" ,\r\n\"endereco\": {\r\n\"cidade\":\"Manaus\" ,\r\n\"pais\":\"Brasil\"\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/produto/?id=65",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"produto",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "65"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/produto/65",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"produto",
+						"65"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\":65,\r\n\"nome\": \" Caderno \",\r\n\"preco\": 12.99 ,\r\n\"fabricante\": {\r\n\"nome\": \"Tilibra\",\r\n\" endereco\": {\r\n\"cidade\": \"Sao Paulo\",\r\n\"pais\": \"Brasil\"\r\n}\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
