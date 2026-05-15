@@ -1,6 +1,5 @@
 import express, { Request, Response } from "express";
-import { Produto } from "./Class/Produto";
-import { idText } from "typescript";
+import { Produto } from "./model/Produto";
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
